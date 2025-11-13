@@ -10,5 +10,9 @@ pipeline {
                 checkout scm
             }
         } 
+        stage('Tests') {
+            sh 'npm install --silent || true'
+            sh 'npm test'
+        }
     }
 }
