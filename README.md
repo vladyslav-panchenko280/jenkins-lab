@@ -136,10 +136,6 @@ After starting Jenkins, retrieve the initial admin password:
 
 **Manual Method:**
 ```bash
-# If using docker-compose
-docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
-
-# If using standalone container
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
