@@ -4,7 +4,7 @@ pipeline {
         REGISTRY = "docker.io/vladyslav280/jenkins-lab"
         IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
-    stage('Checkout') {
+    stages('Checkout') {
         steps {
             checkout scm
         }
