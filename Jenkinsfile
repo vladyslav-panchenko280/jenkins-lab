@@ -11,8 +11,17 @@ pipeline {
             }
         } 
         stage('Tests') {
-            sh 'npm install --silent || true'
-            sh 'npm test'
+            steps {
+                sh 'npm install --silent || true'
+                sh 'npm test'
+            }
+        }
+        stage('Build docker') {
+            steps {
+                script {
+                    dockerImage = docker.build("${REGISTRY}:${IMAGE_TAG}")
+                }
+            }
         }
     }
 }
